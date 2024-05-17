@@ -1,3 +1,5 @@
+using Duothan.Server.Data;
+
 namespace Duothan.Server
 {
     public class Program
@@ -9,6 +11,15 @@ namespace Duothan.Server
             // Add services to the container.
 
             builder.Services.AddControllers();
+            builder.Services.AddScoped<TransportPassRepository>();
+            builder.Services.AddScoped<UserRepository>();
+
+            builder.Services.AddScoped<PublicTransportScheduleRepository>();
+            builder.Services.AddScoped<VehicleLocationRepository>();
+            builder.Services.AddScoped<ParkingInformationRepository>();
+
+
+
 
             var app = builder.Build();
 
@@ -24,7 +35,7 @@ namespace Duothan.Server
 
             app.MapControllers();
 
-            app.MapFallbackToFile("/index.html");
+            app.MapFallbackToFile("/en.html");
 
             app.Run();
         }
