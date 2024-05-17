@@ -1,4 +1,5 @@
 using Duothan.Server.Data;
+using Duothan.Server.Services;
 
 namespace Duothan.Server
 {
@@ -17,6 +18,10 @@ namespace Duothan.Server
             builder.Services.AddScoped<PublicTransportScheduleRepository>();
             builder.Services.AddScoped<VehicleLocationRepository>();
             builder.Services.AddScoped<ParkingInformationRepository>();
+            builder.Services.AddScoped<StripeService>();
+            builder.Services.AddScoped<PayPalService>();
+
+
 
 
 
