@@ -1,0 +1,6 @@
+@Duothan.Server_HostAddress = http://localhost:5163
+
+GET {{Duothan.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
